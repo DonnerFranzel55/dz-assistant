@@ -1,0 +1,18 @@
+{
+    "hello": "hello",
+    "date": "date",
+    "time": "time",
+    "weather": "weather",
+    "in": "in",
+    "currently": "Currently",
+    "high": "High",
+    "low": "Low",
+    "humidity": "Humidity",
+    "feels_like": "Feels like",
+    "pressure": "Pressure",
+    "today_is_the": "Today is",
+    "didnt_understand_that": "Sorry! I didn't understand that.",
+    "the_current_time_is": "The current time is",
+    "weather_in": "The weather in %s is %s with a temperatur of %s°Celcius",
+    "what_time_is_it": "what time is it"
+}

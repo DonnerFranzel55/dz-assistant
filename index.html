@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default-dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ Voice Assistant</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+    <div class="container-fluid vh-100">
+        <div class="container p-3 p-lg-5" id="starter-promt">
+            <h1 class="display-1 fw-medium">Welcome to the <br> <span class="text-gradient fw-bold">DZ Assistent</span>
+            </h1>
+            <hr>
+            <p>This is a small project to understand how voice and voice data process is working. For you as tester,
+                just click on the microphone button.</p>
+            <div class="alert alert-warning" data-theme="dark"><strong>Info!</strong><br> You need to allow the
+                microphone if you been asked for.</div>
+            <hr>
+            <h4>Things you can ask</h4>
+            <ul>
+                <li>Weather (API Key required)</li>
+                <li>Clock</li>
+                <li>Date</li>
+                <li>Hello</li>
+            </ul>
+            <div class="alert alert-info" data-theme="dark"><strong>Hint!</strong><br>More updates are comming soon
+            </div>
+            <hr>
+            <p class="mb-5">The API Key which is needed to get Weather Information comes from OpenWeatherMap.</p>
+        </div>
+        <div id="messageHistory" class="row row-cols-1 overflow-y-auto p-2"
+            style="height: min-content; max-height: 85%;">
+        </div>
+        <div class="fixed-bottom p-5 shadow border-top" style="background-color: var(--md-sys-color-surface);">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col d-flex justify-content-center">
+                    <md-filled-icon-button id="start-btn" style="scale: 1.8;">
+                        <md-icon class="icon-dark" filled>mic</md-icon>
+                    </md-filled-icon-button>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <md-icon-button style="scale: 1.4;">
+                        <md-icon filled>settings</md-icon>
+                    </md-icon-button>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="./assets/js/settings.js"></script>
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/alert.js"></script>
+    <script src="./assets/js/bundle.js"></script>
+    <script src="./assets/js/translation.js"></script>
+</body>
+
+</html>

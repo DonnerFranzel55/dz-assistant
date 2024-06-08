@@ -1,0 +1,138 @@
+@import url(./helper.css);
+@import url(./material-css.css);
+
+:root {
+    --md-ref-typeface-plain: var(--font-sans-serif);
+    --md-ref-typeface-brand: var(--font-sans-serif);
+
+    --md-icon-font: 'Material Symbols Rounded';
+}
+
+body {
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+}
+
+md-icon[filled] {
+    font-variation-settings: 'FILL' 1;
+}
+
+.icon-dark {
+    color: var(--md-sys-color-surface)
+}
+
+.text-gradient {
+    background: linear-gradient(145deg, #8c83ff, #1052b670, #b65810);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    /* Color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--md-sys-color-primary);
+    /* Color of the scrollbar thumb */
+    border-radius: 6px;
+    /* Rounded corners for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Color of the scrollbar thumb when hovered */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.topbar-in {
+    animation: entrance-slide-top 1s ease 0s 1 normal forwards;
+}
+
+.topbar-out {
+    animation: entrance-slide-to-top 1s ease 0s 1 normal forwards;
+}
+
+.hotbar-in {
+    animation: entrance-slide-bottom 1s ease 0s 1 normal forwards;
+
+}
+
+.hotbar-out {
+    animation: entrance-slide-to-bottom 1s ease 0s 1 normal none;
+}
+
+@keyframes entrance-slide-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes entrance-slide-to-top {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-250px);
+    }
+}
+
+@keyframes entrance-slide-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes entrance-slide-to-bottom {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(250px);
+    }
+}
