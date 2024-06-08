@@ -1,7 +1,7 @@
 const translations = {};
 
 async function loadTranslations(lang) {
-    const response = await fetch(`./../lang/${lang}.json`);
+    const response = await fetch(`./../assets/lang/${lang}.json`);
     translations[lang] = await response.json();
 }
 
