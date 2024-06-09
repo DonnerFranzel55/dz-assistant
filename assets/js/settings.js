@@ -17,3 +17,7 @@ function setTheme(theme) {
     document.body.setAttribute("data-theme", theme);
     setSetting("theme", theme)
 }
+function setCountry(country) {
+    defaultCountry = country;
+    setSetting("country", country)
+}

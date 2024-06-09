@@ -20,5 +20,7 @@
     "today_is_the": "Heute ist",
     "didnt_understand_that": "Entschuldigung, das habe ich nicht verstanden.",
     "weather_in": "Das Wetter in %s ist %s bei %s°Celsius",
-    "what_time_is_it": "wie spät ist es"
+    "what_time_is_it": "wie spät ist es",
+    "weather_location_error": "Ich konnte das Wetter für %s nicht finden.",
+    "service_unavailable": "Ich konnte den Service nicht erreichen."
 }

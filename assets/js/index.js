@@ -18,7 +18,7 @@ const messageContainer = document.getElementById("messageHistory");
 
 // Start recognition when the button is clicked
 startButton.addEventListener('click', () => {
-    navigator.mediaDevices.getUserMedia({ audio: true })
+    navigator.mediaDevices.getUserMedia({ video: false, audio: true })
         .then(stream => {
             document.getElementById("starter-promt").classList.add("d-none")
             recognition.start();
@@ -70,7 +70,7 @@ recognition.addEventListener('result', (event) => {
 
 // Restart recognition in case of no match or end
 recognition.addEventListener('nomatch', () => {
-    speak('I did not understand that.');
+    speak(tr("didnt_understand_that"));
     startButton.innerHTML = '<md-icon filled>mic</md-icon>';
 });
 
@@ -106,9 +106,9 @@ async function getWeather(location) {
             })
             speak(template.replace("%s", location).replace("%s", tr(weather.toLowerCase())).replace("%s", temp));
         } else {
-            speak(`I couldn't get the weather for ${location}.`);
+            speak(tr("weather_location_error").replace("%s", location));
         }
     } catch (error) {
-        speak('Sorry, I am having trouble accessing the weather service.');
+        speak(tr("service_unavailable"));
     }
 }

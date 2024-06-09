@@ -16,5 +16,7 @@
     "didnt_understand_that": "Sorry! I didn't understand that.",
     "the_current_time_is": "The current time is",
     "weather_in": "The weather in %s is %s with a temperatur of %s°Celcius",
-    "what_time_is_it": "what time is it"
+    "what_time_is_it": "what time is it",
+    "weather_location_error": "I couldn't find the weather for %s.",
+    "service_unavailable": "The service is not available right now."
 }

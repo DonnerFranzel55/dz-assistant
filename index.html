@@ -73,10 +73,19 @@
                 <md-select-option value="en">English</md-select-option>
                 <md-select-option value="de">Deutsch</md-select-option>
             </md-outlined-select>
-            <md-outlined-select class="w-100" label="Theme" name="theme" onchange="setTheme(value)">
+            <md-outlined-select class="w-100 mb-3" label="Country" name="country" onchange="setCountry(value)">
+                <md-select-option value="US">United States</md-select-option>
+                <md-select-option value="UK">United Kingdom</md-select-option>
+                <md-select-option value="DE">Deutschland</md-select-option>
+                <md-select-option value="AT">Österreich</md-select-option>
+                <md-select-option value="UA">Ukraine</md-select-option>
+            </md-outlined-select>
+            <md-outlined-select class="w-100 mb-3" label="Theme" name="theme" onchange="setTheme(value)">
                 <md-select-option value="default-light">Light</md-select-option>
                 <md-select-option value="default-dark">Dark</md-select-option>
             </md-outlined-select>
+            <md-outlined-text-field label="Weather API Key" value="" class="w-100"
+                oninput="setSetting('weather_apikey',value)"></md-outlined-text-field>
         </form>
         <div slot="actions">
             <md-text-button form="form-id" value="false">Close</md-text-button>
