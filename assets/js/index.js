@@ -61,7 +61,25 @@ recognition.addEventListener('result', (event) => {
             getWeather(locations);
             break;
         case transcript.includes(tr("tell_a_joke")):
-            getJoke();
+            getJoke("Any");
+            break;
+        case transcript.includes(tr("tell_a_programmer_joke")):
+            getJoke("Programming");
+            break;
+        case transcript.includes(tr("tell_a_misc_joke")):
+            getJoke("Miscellaneous");
+            break;
+        case transcript.includes(tr("tell_a_dark_joke")):
+            getJoke("Dark");
+            break;
+        case transcript.includes(tr("tell_a_pun_joke")):
+            getJoke("Pun");
+            break;
+        case transcript.includes(tr("tell_a_spooky_joke")):
+            getJoke("Spooky");
+            break;
+        case transcript.includes(tr("tell_a_xmas_joke")):
+            getJoke("Christmas");
             break;
         default:
             speak(tr("didnt_understand_that"));
@@ -114,8 +132,8 @@ async function getWeather(location) {
     }
 }
 
-async function getJoke() {
-    fetch(`https://v2.jokeapi.dev/joke/Any?format=txt&lang=${defaultLang}`)
+async function getJoke(category) {
+    fetch(`https://v2.jokeapi.dev/joke/${category}?format=txt&lang=${defaultLang}`)
         .then(res => res.text())
         .then(data => {
             speak(data)

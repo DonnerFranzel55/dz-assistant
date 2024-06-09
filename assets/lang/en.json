@@ -22,5 +22,11 @@
     "weather_location_error": "I couldn't find the weather for %s.",
     "service_unavailable": "The service is not available right now.",
     "how_can_i_assist_you_today": "Hello! How can I assist you today?",
-    "tell_a_joke": "Tell a joke"
+    "tell_a_joke": "make a joke",
+    "tell_a_programmer_joke": "make a programmer joke",
+    "tell_a_misc_joke": "make a miscellaneous joke",
+    "tell_a_pun_joke": "make a pun joke",
+    "tell_a_dark_joke": "make a dark joke",
+    "tell_a_spooky_joke": "make a spooky joke",
+    "tell_a_xmas_joke": "make a Christmas joke"
 }
