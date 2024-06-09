@@ -30,5 +30,10 @@
     "tell_a_pun_joke": "make a pun joke",
     "tell_a_dark_joke": "make a dark joke",
     "tell_a_spooky_joke": "make a spooky joke",
-    "tell_a_xmas_joke": "make a Christmas joke"
+    "tell_a_xmas_joke": "make a Christmas joke",
+    "give_me_an_advice": "give me an advice",
+    "whats_my_ip": "what is my ip",
+    "my_ip": "my IP",
+    "ip_response": "Your IP-Adress is %s",
+    "invalidIpAdress": "Invalid IP-Adress"
 }

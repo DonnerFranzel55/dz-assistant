@@ -91,8 +91,6 @@
             <md-outlined-select label="Microphone" class="w-100 mb-3" id="microphoneSelcet">
                 <md-select-option>Select microphone</md-select-option>
             </md-outlined-select>
-            <md-outlined-text-field label="Weather API Key" value="" class="w-100 mb-3"
-                oninput="setSetting('weather_apikey',value)"></md-outlined-text-field>
             <md-filled-button onclick="document.getElementById('devOptionDialog').setAttribute('open', '')"
                 class="w-100">Developer Options</md-filled-button>
         </form>
@@ -110,6 +108,12 @@
             <div>
                 <p class="mb-2 fs-5"><span>Version: </span> <span id="versionNumber"></span></p>
                 <p class="mb-0 fs-5"><span>Build: </span> <span id="buildNumber"></span></p>
+            </div>
+            <hr>
+            <div>
+                <md-outlined-text-field oninput="setSetting('my_custom_ip_adress', value)" label="Custom IP Adress" value="" class="w-100 mb-3"></md-outlined-text-field>
+                <md-outlined-text-field label="Weather API Key" value="" class="w-100 mb-3" oninput="setSetting('weather_apikey',value)"></md-outlined-text-field>
+
             </div>
             <hr>
             <div id="speechHistory"></div>

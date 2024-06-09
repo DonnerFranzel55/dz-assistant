@@ -34,5 +34,10 @@
     "tell_a_pun_joke": "einen Wortspiel Witz",
     "tell_a_dark_joke": "erzähl einen dunklen Witz",
     "tell_a_spooky_joke": "erzähl einen gruseligen Witz",
-    "tell_a_xmas_joke": "erzähl einen Weihnachtswitz"
+    "tell_a_xmas_joke": "erzähl einen Weihnachtswitz",
+    "give_me_an_advice": "Gib mir einen Rat",
+    "whats_my_ip": "Was ist meine IP",
+    "my_ip": "Meine IP",
+    "ip_response": "Deine IP-Adresse ist %s",
+    "invalidIpAdress": "Ungültige IP-Adresse"
 }

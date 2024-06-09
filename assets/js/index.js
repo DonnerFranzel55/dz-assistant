@@ -1,4 +1,4 @@
-const build = "DZAP.20240609.002.003"
+const build = "DZAP.20240609.002.004"
 const version = "0.0.2"
 let defaultLang = getSetting("lang") || setSetting("lang", "en");
 let defaultCountry = getSetting("country") || setSetting("country", "US");
@@ -14,8 +14,8 @@ recognition.lang = defaultLang + "-" + defaultCountry;
 
 const startButton = document.getElementById('start-btn');
 const messageContainer = document.getElementById("messageHistory");
-document.getElementById("buildNumber").textContent=build
-document.getElementById("versionNumber").textContent=version
+document.getElementById("buildNumber").textContent = build
+document.getElementById("versionNumber").textContent = version
 
 // Start recognition when the button is clicked
 startButton.addEventListener('click', () => {
@@ -87,6 +87,13 @@ recognition.addEventListener('result', (event) => {
         case transcript.includes(tr("tell_a_xmas_joke")):
             getJoke("Christmas");
             break;
+        case transcript.includes(tr("give_me_an_advice")):
+            getAdvice();
+            break;
+        case transcript.includes(tr("whats_my_ip")):
+        case transcript.includes(tr("my_ip")):
+            getMyIp();
+            break;
         default:
             speak(tr("didnt_understand_that"));
     }
@@ -151,6 +158,42 @@ async function getJoke(category) {
         .then(res => res.text())
         .then(data => {
             speak(data)
+        })
+        .catch(error => {
+            console.error(error);
+            speak(tr("service_unavailable"))
+        })
+}
+
+async function getAdvice() {
+    fetch("https://api.adviceslip.com/advice")
+        .then(res => res.json())
+        .then(data => {
+            speak(data.slip.advice)
+        })
+        .catch(error => {
+            console.error(error);
+            speak(tr("service_unavailable"))
+        })
+}
+
+async function getMyIp() {
+    const customIP = getSetting("my_custom_ip_adress") || ""
+    fetch(`http://ip-api.com/json/${customIP}`)
+        .then(res => res.json())
+        .then(data => {
+            const dataJ = data
+            if (data.status === "success") {
+                const template = tr("ip_response");
+                speak(template.replace("%s", data.query))
+                import("./../../templates/ip.js")
+                    .then(data => {
+                        data.build(dataJ)
+                    })
+            } else {
+                speak(tr("invalidIpAdress"))
+            }
+
         })
         .catch(error => {
             console.error(error);
