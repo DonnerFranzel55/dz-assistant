@@ -15,8 +15,9 @@ const messageContainer = document.getElementById("messageHistory");
 startButton.addEventListener('click', () => {
     navigator.mediaDevices.getUserMedia({ video: false, audio: true })
         .then(stream => {
+            console.log(stream);
             document.getElementById("starter-promt").classList.add("d-none")
-            recognition.start();
+            recognition.start(stream);
             startButton.innerHTML = '<md-icon filled>graphic_eq</md-icon>';
         })
         .catch(error => {
@@ -58,7 +59,6 @@ recognition.addEventListener('result', (event) => {
             getWeather(locations);
             break;
         default:
-            console.log(transcript.includes(tr("hello").toLowerCase()));
             speak(tr("didnt_understand_that"));
     }
 
@@ -96,7 +96,6 @@ async function getWeather(location) {
             const dataJ = data
             const weather = data.weather[0].main;
             const temp = data.main.temp;
-            console.log(data);
             const template = tr("weather_in")
             import("./../../templates/weather.js").then(data => {
                 data.build(dataJ)
