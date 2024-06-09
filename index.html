@@ -59,7 +59,7 @@
 
     <md-dialog open id="settingsDialog" class="w-100 h-100">
         <div slot="headline">
-            Settings
+            <span>Settings</span>
         </div>
         <form slot="content" id="form-id" method="dialog">
             <md-filled-button onclick="loadSettings()" class="mb-3">
@@ -86,7 +86,8 @@
             </md-outlined-select>
             <md-outlined-text-field label="Weather API Key" value="" class="w-100 mb-3"
                 oninput="setSetting('weather_apikey',value)"></md-outlined-text-field>
-            <md-filled-button onclick="document.getElementById('devOptionDialog').setAttribute('open', '')" class="w-100">Developer Options</md-filled-button>
+            <md-filled-button onclick="document.getElementById('devOptionDialog').setAttribute('open', '')"
+                class="w-100">Developer Options</md-filled-button>
         </form>
         <div slot="actions">
             <md-text-button form="form-id" value="false">Close</md-text-button>
@@ -98,9 +99,16 @@
         <div slot="headline">
             Developer Options
         </div>
-        <div slot="content" id="speechHistory"></div>
+        <div slot="content">
+            <div>
+                <p class="mb-2 fs-5"><span>Version: </span> <span>0.0.2</span></p>
+                <p class="mb-0 fs-5"><span>Build: </span> <span>DZAP.20240609.002.001</span></p>
+            </div>
+            <div id="speechHistory"></div>
+        </div>
         <div slot="actions">
-            <md-text-button onclick="document.getElementById('devOptionDialog').removeAttribute('open', '')">Close</md-text-button>
+            <md-text-button
+                onclick="document.getElementById('devOptionDialog').removeAttribute('open', '')">Close</md-text-button>
         </div>
     </md-dialog>
 
