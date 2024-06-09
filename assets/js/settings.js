@@ -9,7 +9,7 @@ function setSetting(key, value) {
 
 function loadSettings() {
     defaultLang = getSetting("lang") || setSetting("lang", "en");
-    setTheme(getSetting("theme") || setSetting("theme", "default-light"))
+    setTheme(getSetting("theme") || setSetting("theme", "default-light"));
     createTopBar("Imported!")
 }
 
