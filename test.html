@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech Recognition Example</title>
+</head>
+<body>
+  <h1>Speech Recognition Example</h1>
+  <button id="startButton">Start</button>
+  <p id="transcript"></p>
+  <p id="confidence"></p>
+
+  <script>
+    const startButton = document.getElementById('startButton');
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+    recognition.continuous = true; // Keep recognizing speech continuously
+    recognition.interimResults = false; // Do not show interim results
+
+    startButton.addEventListener('click', () => {
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {
+          recognition.start();
+          startButton.innerHTML = 'Listening...';
+        })
+        .catch(error => {
+          console.error('Error accessing media devices.', error);
+          startButton.innerHTML = 'Start';
+        });
+    });
+
+    recognition.addEventListener('result', (event) => {
+      let transcript = '';
+      let confidence = '';
+      for (const result of event.results) {
+        for (const alternative of result) {
+          transcript += alternative.transcript + ' ';
+          confidence += `Confidence: ${alternative.confidence.toFixed(2)}<br>`;
+        }
+      }
+      document.getElementById('transcript').innerHTML = transcript;
+      document.getElementById('confidence').innerHTML = confidence;
+    });
+
+    recognition.addEventListener('error', (event) => {
+      console.error('Speech recognition error:', event.error);
+      startButton.innerHTML = 'Start';
+    });
+
+    recognition.addEventListener('end', () => {
+      // Optionally, automatically restart recognition if it ends
+      startButton.innerHTML = 'Start';
+    });
+  </script>
+</body>
+</html>
