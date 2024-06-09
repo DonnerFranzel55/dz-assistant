@@ -21,5 +21,6 @@
     "what_time_is_it": "what time is it",
     "weather_location_error": "I couldn't find the weather for %s.",
     "service_unavailable": "The service is not available right now.",
-    "how_can_i_assist_you_today": "Hello! How can I assist you today?"
+    "how_can_i_assist_you_today": "Hello! How can I assist you today?",
+    "tell_a_joke": "Tell a joke"
 }

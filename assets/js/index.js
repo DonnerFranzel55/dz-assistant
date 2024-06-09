@@ -15,7 +15,7 @@ const messageContainer = document.getElementById("messageHistory");
 startButton.addEventListener('click', () => {
     navigator.mediaDevices.getUserMedia({ video: false, audio: true })
         .then(stream => {
-            
+
             document.getElementById("microphoneSelcet").innerHTML = `<md-select-option value="0">${stream.getTracks()[0].label}</md-select-option>`
             document.getElementById("starter-promt").classList.add("d-none")
             recognition.start();
@@ -59,6 +59,9 @@ recognition.addEventListener('result', (event) => {
             const indexIn = transcriptArray.indexOf("in");
             const locations = transcriptArray.slice(indexIn + 1).join(" ");
             getWeather(locations);
+            break;
+        case transcript.includes(tr("tell_a_joke")):
+            getJoke();
             break;
         default:
             speak(tr("didnt_understand_that"));
@@ -109,4 +112,16 @@ async function getWeather(location) {
     } catch (error) {
         speak(tr("service_unavailable"));
     }
+}
+
+async function getJoke() {
+    fetch(`https://v2.jokeapi.dev/joke/Any?format=txt&lang=${defaultLang}`)
+        .then(res => res.text())
+        .then(data => {
+            speak(data)
+        })
+        .catch(error => {
+            console.error(error);
+            speak(tr("service_unavailable"))
+        })
 }
