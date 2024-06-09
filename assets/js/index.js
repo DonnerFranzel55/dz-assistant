@@ -4,7 +4,7 @@ let rate = 1;
 let pitch = 1;
 
 
-const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.SpeechRecognitionAlternative);
 recognition.interimResults = false;
 recognition.lang = defaultLang + "-" + defaultCountry;
 
@@ -17,7 +17,7 @@ startButton.addEventListener('click', () => {
         .then(stream => {
             console.log(stream);
             document.getElementById("starter-promt").classList.add("d-none")
-            recognition.start(stream);
+            recognition.start();
             startButton.innerHTML = '<md-icon filled>graphic_eq</md-icon>';
         })
         .catch(error => {
