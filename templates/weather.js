@@ -1,11 +1,11 @@
-export function build(data) {
+export function build(data, unit) {
     const weatherApplet = `<div class="col d-flex justify-content-start mb-2" style="height: fit-content;">
     <div style="background-color: var(--md-sys-color-surface-container-high);" class="p-2 rounded-3 w-100 text-center">
         <div class="d-flex justify-content-center">
             <p class="mb-0">${tr("currently")}</p>
         </div>
         <div class="mt-2 d-flex justify-content-center">
-            <h1 class="display-1 fw-medium">${data.main.temp}°C</h1>
+            <h1 class="display-1 fw-medium">${data.main.temp}°<span class="text-capitalize">${unit}</span></h1>
         </div>
         <div class="mt-1 d-flex justify-content-center">
             <h4 class="mb-0 text-capitalize">${tr(data.weather[0].main.toLowerCase())}</h4>

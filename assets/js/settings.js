@@ -10,6 +10,7 @@ function setSetting(key, value) {
 function loadSettings() {
     defaultLang = getSetting("lang") || setSetting("lang", "en");
     defaultCountry = getSetting("country") || setSetting("country", "US");
+    weatherUnit = getSetting("weatherUnit") || setSetting("weatherUnit", "metric")
     setTheme(getSetting("theme") || setSetting("theme", "default-light"));
     createTopBar(tr("imported") || "Imported!")
 }
@@ -21,4 +22,8 @@ function setTheme(theme) {
 function setCountry(country) {
     defaultCountry = country;
     setSetting("country", country);
+}
+function setWeatherUnit(unit) {
+    weatherUnit = unit;
+    setSetting("weatherUnit", unit);
 }

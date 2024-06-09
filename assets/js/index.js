@@ -4,6 +4,7 @@ let defaultLang = getSetting("lang") || setSetting("lang", "en");
 let defaultCountry = getSetting("country") || setSetting("country", "US");
 let rate = 1;
 let pitch = 1;
+let weatherUnit = "metric"
 
 
 
@@ -116,19 +117,27 @@ function speak(text) {
 //External Function
 async function getWeather(location) {
     const apiKey = getSetting("weather_apikey") || setSetting("weather_apikey", "demo");
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=${weatherUnit}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
         if (data.cod === 200) {
             const dataJ = data
+            console.log(data);
             const weather = data.weather[0].main;
             const temp = data.main.temp;
             const template = tr("weather_in")
+            let trKeyDegreeUnit = "";
+            if (weatherUnit === "metric") {
+                trKeyDegreeUnit = "c"
+            }
+            if (weatherUnit === "imperial") {
+                trKeyDegreeUnit = "f"
+            }
             import("./../../templates/weather.js").then(data => {
-                data.build(dataJ)
+                data.build(dataJ, trKeyDegreeUnit)
             })
-            speak(template.replace("%s", location).replace("%s", tr(weather.toLowerCase())).replace("%s", temp));
+            speak(template.replace("%s", location).replace("%s", tr(weather.toLowerCase())).replace("%s", temp) + tr(trKeyDegreeUnit));
         } else {
             speak(tr("weather_location_error").replace("%s", location));
         }
