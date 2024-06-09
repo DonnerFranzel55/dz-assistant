@@ -7,7 +7,7 @@ The assistent can:
 - tell the weather*
 - tell the time and date
 
-* API Key required
+*API Key required
 
 ## Demo
 You can test the assistent [here](https://donnerfranzel55.github.io/dz-assistant/).
