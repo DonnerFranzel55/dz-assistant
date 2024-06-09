@@ -7,6 +7,11 @@ function setSetting(key, value) {
     createTopBar(tr("saved") || "Saved!");
 }
 
+function delSetting(key) {
+    localStorage.removeItem(key);
+    createTopBar(tr("deleted") || "Deleted")
+}
+
 function loadSettings() {
     defaultLang = getSetting("lang") || setSetting("lang", "en");
     defaultCountry = getSetting("country") || setSetting("country", "US");

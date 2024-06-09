@@ -27,6 +27,18 @@ export function build(data) {
                         <td>${data.as}</td>
                     </tr>
                     <tr>
+                        <td>${tr("asname")}</td>
+                        <td>${data.asname}</td>
+                    </tr>
+                    <tr>
+                        <td>${tr("reverse")}</td>
+                        <td>${data.reverse}</td>
+                    </tr>
+                    <tr>
+                        <td>${tr("offset")}</td>
+                        <td>${data.offset}</td>
+                    </tr>
+                    <tr>
                         <td>${tr("lat")}</td>
                         <td>${data.lat}</td>
                     </tr>
@@ -37,6 +49,10 @@ export function build(data) {
                     <tr>
                         <td>${tr("timezone")}</td>
                         <td>${data.timezone}</td>
+                    </tr>
+                    <tr>
+                        <td>${tr("currency")}</td>
+                        <td>${data.currency}</td>
                     </tr>
                 </tbody>
             </table>

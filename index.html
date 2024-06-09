@@ -111,9 +111,23 @@
             </div>
             <hr>
             <div>
-                <md-outlined-text-field oninput="setSetting('my_custom_ip_adress', value)" label="Custom IP Adress" value="" class="w-100 mb-3"></md-outlined-text-field>
-                <md-outlined-text-field label="Weather API Key" value="" class="w-100 mb-3" oninput="setSetting('weather_apikey',value)"></md-outlined-text-field>
-
+                <md-outlined-text-field oninput="setSetting('my_custom_ip_adress', value)" label="Custom IP Adress"
+                    value="" class="w-100 mb-3"></md-outlined-text-field>
+                <md-outlined-text-field label="Weather API Key" value="" class="w-100 mb-3"
+                    oninput="setSetting('weather_apikey',value)"></md-outlined-text-field>
+                <md-outlined-select class="w-100 mb-3" label="Request Language" name="req_lang" onchange="setSetting('req_lang',value)">
+                    <md-select-option value="en">English</md-select-option>
+                    <md-select-option value="de">Deutsch</md-select-option>
+                    <md-select-option value="fr">Français</md-select-option>
+                    <md-select-option value="jp">日本語</md-select-option>
+                    <md-select-option value="kr">한국인</md-select-option>
+                    <md-select-option value="pt">Portuguiesian</md-select-option>
+                    <md-select-option value="pl">Polski</md-select-option>
+                    <md-select-option value="es">Español</md-select-option>
+                    <md-select-option value="ar">عربي</md-select-option>
+                    <md-select-option value="ru">Русский</md-select-option>
+                </md-outlined-select>
+                <md-filled-button onclick="delSetting('req_lang')">Delete Request Language</md-filled-button>
             </div>
             <hr>
             <div id="speechHistory"></div>

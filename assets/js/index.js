@@ -2,6 +2,7 @@ const build = "DZAP.20240609.002.004"
 const version = "0.0.2"
 let defaultLang = getSetting("lang") || setSetting("lang", "en");
 let defaultCountry = getSetting("country") || setSetting("country", "US");
+let reqLang = getSetting("req_lang") || defaultLang;
 let rate = 1;
 let pitch = 1;
 let weatherUnit = "metric"
@@ -124,7 +125,7 @@ function speak(text) {
 //External Function
 async function getWeather(location) {
     const apiKey = getSetting("weather_apikey") || setSetting("weather_apikey", "demo");
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=${weatherUnit}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=${weatherUnit}&lang=${reqLang}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
@@ -154,7 +155,7 @@ async function getWeather(location) {
 }
 
 async function getJoke(category) {
-    fetch(`https://v2.jokeapi.dev/joke/${category}?format=txt&lang=${defaultLang}`)
+    fetch(`https://v2.jokeapi.dev/joke/${category}?format=txt&lang=${reqLang}`)
         .then(res => res.text())
         .then(data => {
             speak(data)
@@ -179,7 +180,7 @@ async function getAdvice() {
 
 async function getMyIp() {
     const customIP = getSetting("my_custom_ip_adress") || ""
-    fetch(`http://ip-api.com/json/${customIP}`)
+    fetch(`http://ip-api.com/json/${customIP}?fields=66846719&lang=${reqLang}`)
         .then(res => res.json())
         .then(data => {
             const dataJ = data
