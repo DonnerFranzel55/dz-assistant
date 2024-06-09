@@ -7,7 +7,7 @@ assignees: ''
 ---
 
 **App Information (Do not change unless your version or build is diffrent)**
-Build: DZAP.20240609.002.001
+Build: DZAP.20240609.002.002
 Version: 0.0.2
 
 **Describe the bug**
