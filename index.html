@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="default-dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
-<body>
+<body data-theme="default-dark">
     <div class="container-fluid vh-100">
         <div class="container p-3 p-lg-5" id="starter-promt">
             <h1 class="display-1 fw-medium">Welcome to the <br> <span class="text-gradient fw-bold">DZ Assistent</span>
@@ -45,7 +45,8 @@
                     </md-filled-icon-button>
                 </div>
                 <div class="col d-flex justify-content-end">
-                    <md-icon-button style="scale: 1.4;">
+                    <md-icon-button style="scale: 1.4;"
+                        onclick="document.getElementById('settingsDialog').setAttribute('open', '')">
                         <md-icon filled>settings</md-icon>
                     </md-icon-button>
                 </div>
@@ -56,6 +57,32 @@
 
     </div>
 
+    <md-dialog open id="settingsDialog" class="w-100 h-100">
+        <div slot="headline">
+            Settings
+        </div>
+        <form slot="content" id="form-id" method="dialog">
+            <md-filled-button onclick="loadSettings()" class="mb-3">
+                <div class="d-flex align-items-center">
+                    <md-icon>download</md-icon>
+                    <span>Import</span>
+                </div>
+            </md-filled-button>
+            <md-divider></md-divider>
+            <md-outlined-select class="w-100 mb-3" label="Language" name="lang" onchange="setLanguage(value)">
+                <md-select-option value="en">English</md-select-option>
+                <md-select-option value="de">Deutsch</md-select-option>
+            </md-outlined-select>
+            <md-outlined-select class="w-100" label="Theme" name="theme" onchange="setTheme(value)">
+                <md-select-option value="default-light">Light</md-select-option>
+                <md-select-option value="default-dark">Dark</md-select-option>
+            </md-outlined-select>
+        </form>
+        <div slot="actions">
+            <md-text-button form="form-id" value="false">Close</md-text-button>
+            <md-filled-button form="form-id" value="true">Save</md-filled-button>
+        </div>
+    </md-dialog>
 
     <script src="./assets/js/settings.js"></script>
     <script src="./assets/js/index.js"></script>

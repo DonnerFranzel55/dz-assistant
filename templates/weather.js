@@ -1,6 +1,6 @@
 export function build(data) {
     const weatherApplet = `<div class="col d-flex justify-content-start mb-2" style="height: fit-content;">
-    <div class="bg-dark p-2 rounded-3 w-100 text-center">
+    <div style="background-color: var(--md-sys-color-surface-container-high);" class="p-2 rounded-3 w-100 text-center">
         <div class="d-flex justify-content-center">
             <p class="mb-0">${tr("currently")}</p>
         </div>
@@ -22,7 +22,7 @@ export function build(data) {
         </div>
         <hr>
         <div class="mt-3 d-flex justify-content-start">
-            <table class="table table-dark table-borderless table-striped">
+            <table class="table table-borderless table-striped">
                 <tbody>
                     <tr>
                         <td>${tr("feels_like")}</td>

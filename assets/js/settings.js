@@ -6,3 +6,14 @@ function setSetting(key, value) {
     localStorage.setItem(key, value);
     createTopBar("Saved!")
 }
+
+function loadSettings() {
+    defaultLang = getSetting("lang") || setSetting("lang", "en");
+    setTheme(getSetting("theme") || setSetting("lang", "default-light"))
+    createTopBar("Imported!")
+}
+
+function setTheme(theme) {
+    document.body.setAttribute("data-theme", theme);
+    setSetting("theme", theme)
+}

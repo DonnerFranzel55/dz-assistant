@@ -20,3 +20,4 @@ function setLanguage(lang) {
 function tr(key) {
     return translations[defaultLang][key] || key;
 }
+

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root,
-[data-theme=light] {
+[data-theme="default-light"] {
   --blue: #0d6efd;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -120,7 +120,7 @@
   --form-invalid-border-color: #dc3545;
 }
 
-[data-theme=dark] {
+[data-theme="default-dark"] {
   color-scheme: dark;
   --body-color: #dee2e6;
   --body-color-rgb: 222, 226, 230;
