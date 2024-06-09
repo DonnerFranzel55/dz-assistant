@@ -4,11 +4,15 @@ about: Create a report to help us improve
 title: "[BUG]"
 labels: bug
 assignees: ''
-build: DZAP.20240609.002.001
-
 ---
 
+**App Information (Do not change unless your version or build is diffrent)**
+Build: DZAP.20240609.002.001
+Version: 0.0.2
+
 **Describe the bug**
+
+
 A clear and concise description of what the bug is.
 
 **To Reproduce**
