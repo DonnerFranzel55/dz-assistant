@@ -34,7 +34,7 @@ startButton.addEventListener('click', () => {
 recognition.addEventListener('result', (event) => {
     const transcript = Array.from(event.results).map(result => result[0]).map(result => result.transcript).join('');
 
-    messageContainer.innerHTML += `<div class="col d-flex justify-content-end mb-2"><div style="background-color: var(--md-sys-color-surface-container-high);" class="p-2 rounded-3"><p class="mb-0">${transcript}</p></div></div>`
+    messageContainer.innerHTML += `<div class="col d-flex justify-content-end mb-2"><div style="background-color: var(--md-sys-color-surface-container-high);" class="p-2 rounded-3"><p class="mb-0">${transcript || event.result}</p></div></div>`
 
     switch (true) {
         case transcript.includes(tr("hello").toLowerCase()):

@@ -12,6 +12,7 @@
     "humidity": "Humidity",
     "feels_like": "Feels like",
     "pressure": "Pressure",
+    "imported": "Imported",
     "today_is_the": "Today is",
     "didnt_understand_that": "Sorry! I didn't understand that.",
     "the_current_time_is": "The current time is",
