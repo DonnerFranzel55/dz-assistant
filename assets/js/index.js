@@ -1,5 +1,5 @@
 let defaultLang = getSetting("lang") || setSetting("lang", "en");
-let defaultCountry = "US";
+let defaultCountry = getSetting("country") || setSetting("country", "US");
 let rate = 1;
 let pitch = 1;
 
@@ -15,7 +15,7 @@ const messageContainer = document.getElementById("messageHistory");
 startButton.addEventListener('click', () => {
     navigator.mediaDevices.getUserMedia({ video: false, audio: true })
         .then(stream => {
-            console.log(stream.getTracks()[0]);
+            
             document.getElementById("microphoneSelcet").innerHTML = `<md-select-option value="0">${stream.getTracks()[0].label}</md-select-option>`
             document.getElementById("starter-promt").classList.add("d-none")
             recognition.start();
@@ -29,11 +29,12 @@ startButton.addEventListener('click', () => {
 
 // Handle the results from the speech recognition
 recognition.addEventListener('result', (event) => {
+    document.getElementById("speechHistory").innerHTML += `<details class="fs-5">${Array.from(event.results).map(result => result[0]).map(result => result.transcript)}</details>`
     const transcript = Array.from(event.results).map(result => result[0]).map(result => result.transcript).join('');
 
     messageContainer.innerHTML += `<div class="col d-flex justify-content-end mb-2"><div style="background-color: var(--md-sys-color-surface-container-high);" class="p-2 rounded-3"><p class="mb-0">${transcript || event.result}</p></div></div>`
 
-    document.getElementById("speechHistory").innerHTML += `<details class="fs-5Media">${transcript}</details>`
+    //document.getElementById("speechHistory").innerHTML += `<details class="fs-5">${transcript}</details>`
 
     switch (true) {
         case transcript.includes(tr("hello").toLowerCase()):
