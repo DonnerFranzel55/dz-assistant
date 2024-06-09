@@ -4,12 +4,7 @@ let rate = 1;
 let pitch = 1;
 
 
-// Ensure compatibility with different browsers
-window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-
-
-const recognition = new SpeechRecognition();
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
 recognition.interimResults = false;
 recognition.lang = defaultLang + "-" + defaultCountry;
 
@@ -36,7 +31,7 @@ recognition.addEventListener('result', (event) => {
 
     messageContainer.innerHTML += `<div class="col d-flex justify-content-end mb-2"><div style="background-color: var(--md-sys-color-surface-container-high);" class="p-2 rounded-3"><p class="mb-0">${transcript || event.result}</p></div></div>`
 
-    document.getElementById("speechHistory").innerHTML += `<details class="fs-5">${transcript}</details>`
+    document.getElementById("speechHistory").innerHTML += `<details class="fs-5Media">${transcript}</details>`
 
     switch (true) {
         case transcript.includes(tr("hello").toLowerCase()):
