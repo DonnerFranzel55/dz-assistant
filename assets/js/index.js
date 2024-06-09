@@ -4,7 +4,7 @@ let rate = 1;
 let pitch = 1;
 
 
-const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.SpeechRecognitionAlternative);
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition);
 recognition.interimResults = false;
 recognition.lang = defaultLang + "-" + defaultCountry;
 
@@ -15,7 +15,8 @@ const messageContainer = document.getElementById("messageHistory");
 startButton.addEventListener('click', () => {
     navigator.mediaDevices.getUserMedia({ video: false, audio: true })
         .then(stream => {
-            console.log(stream);
+            console.log(stream.getTracks()[0]);
+            document.getElementById("microphoneSelcet").innerHTML = `<md-select-option value="0">${stream.getTracks()[0].label}</md-select-option>`
             document.getElementById("starter-promt").classList.add("d-none")
             recognition.start();
             startButton.innerHTML = '<md-icon filled>graphic_eq</md-icon>';

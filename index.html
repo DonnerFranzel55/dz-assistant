@@ -84,6 +84,9 @@
                 <md-select-option value="default-light">Light</md-select-option>
                 <md-select-option value="default-dark">Dark</md-select-option>
             </md-outlined-select>
+            <md-outlined-select label="Microphone" class="w-100 mb-3" id="microphoneSelcet">
+                <md-select-option>Select microphone</md-select-option>
+            </md-outlined-select>
             <md-outlined-text-field label="Weather API Key" value="" class="w-100 mb-3"
                 oninput="setSetting('weather_apikey',value)"></md-outlined-text-field>
             <md-filled-button onclick="document.getElementById('devOptionDialog').setAttribute('open', '')"
