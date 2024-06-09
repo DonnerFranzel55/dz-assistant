@@ -36,6 +36,8 @@ recognition.addEventListener('result', (event) => {
 
     messageContainer.innerHTML += `<div class="col d-flex justify-content-end mb-2"><div style="background-color: var(--md-sys-color-surface-container-high);" class="p-2 rounded-3"><p class="mb-0">${transcript || event.result}</p></div></div>`
 
+    document.getElementById("speechHistory").innerHTML += `<details>${transcript}</details>`
+
     switch (true) {
         case transcript.includes(tr("hello").toLowerCase()):
             speak('Hello! How can I assist you today?');

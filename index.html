@@ -84,12 +84,23 @@
                 <md-select-option value="default-light">Light</md-select-option>
                 <md-select-option value="default-dark">Dark</md-select-option>
             </md-outlined-select>
-            <md-outlined-text-field label="Weather API Key" value="" class="w-100"
+            <md-outlined-text-field label="Weather API Key" value="" class="w-100 mb-3"
                 oninput="setSetting('weather_apikey',value)"></md-outlined-text-field>
+            <md-filled-button onclick="document.getElementById('devOptionDialog').setAttribute('open', '')" class="w-100">Developer Options</md-filled-button>
         </form>
         <div slot="actions">
             <md-text-button form="form-id" value="false">Close</md-text-button>
             <md-filled-button form="form-id" value="true">Save</md-filled-button>
+        </div>
+    </md-dialog>
+
+    <md-dialog id="devOptionDialog" class="w-100 h-100">
+        <div slot="headline">
+            Developer Options
+        </div>
+        <div slot="content" id="speechHistory"></div>
+        <div slot="actions">
+            <md-text-button onclick="document.getElementById('devOptionDialog').removeAttribute('open', '')">Close</md-text-button>
         </div>
     </md-dialog>
 
