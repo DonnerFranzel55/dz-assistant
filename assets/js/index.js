@@ -44,55 +44,55 @@ recognition.addEventListener('result', (event) => {
     //document.getElementById("speechHistory").innerHTML += `<details class="fs-5">${transcript}</details>`
 
     switch (true) {
-        case transcript.includes(tr("hello").toLowerCase()):
+        case transcript.includes(mtr("hello").toLowerCase()):
             speak(tr("how_can_i_assist_you_today"));
             setTimeout(() => {
                 recognition.start();
                 startButton.innerHTML = '<md-icon filled>graphic_eq</md-icon>';
             }, 3000);
             break;
-        case transcript.includes(tr("time")):
-        case transcript.includes(tr("clock")):
-        case transcript.includes(tr("what_time_is_it")):
+        case transcript.includes(mtr("time")):
+        case transcript.includes(mtr("clock")):
+        case transcript.includes(mtr("what_time_is_it")):
             const time = new Date().toLocaleTimeString(defaultLang, { hour: "numeric", minute: "numeric" });
             speak(`${tr("the_current_time_is")} ${time}`);
             break;
-        case transcript.includes(tr("date")):
+        case transcript.includes(mtr("date")):
             const date = new Date().toLocaleDateString(defaultLang, { day: "numeric", month: "long", year: "numeric", weekday: "long" });
             speak(`${tr("today_is_the")} ${date}`);
             break;
-        case transcript.includes(tr("weather")) && transcript.includes(tr("in")):
+        case transcript.includes(mtr("weather")) && transcript.includes(tr("in")):
             const transcriptArray = transcript.split(" ");
             const indexIn = transcriptArray.indexOf("in");
             const locations = transcriptArray.slice(indexIn + 1).join(" ");
             getWeather(locations);
             break;
-        case transcript.includes(tr("tell_a_joke")):
+        case transcript.includes(mtr("tell_a_joke")):
             getJoke("Any");
             break;
-        case transcript.includes(tr("tell_a_programmer_joke")):
+        case transcript.includes(mtr("tell_a_programmer_joke")):
             getJoke("Programming");
             break;
-        case transcript.includes(tr("tell_a_misc_joke")):
+        case transcript.includes(mtr("tell_a_misc_joke")):
             getJoke("Miscellaneous");
             break;
-        case transcript.includes(tr("tell_a_dark_joke")):
+        case transcript.includes(mtr("tell_a_dark_joke")):
             getJoke("Dark");
             break;
-        case transcript.includes(tr("tell_a_pun_joke")):
+        case transcript.includes(mtr("tell_a_pun_joke")):
             getJoke("Pun");
             break;
-        case transcript.includes(tr("tell_a_spooky_joke")):
+        case transcript.includes(mtr("tell_a_spooky_joke")):
             getJoke("Spooky");
             break;
-        case transcript.includes(tr("tell_a_xmas_joke")):
+        case transcript.includes(mtr("tell_a_xmas_joke")):
             getJoke("Christmas");
             break;
-        case transcript.includes(tr("give_me_an_advice")):
+        case transcript.includes(mtr("give_me_an_advice")):
             getAdvice();
             break;
-        case transcript.includes(tr("whats_my_ip")):
-        case transcript.includes(tr("my_ip")):
+        case transcript.includes(mtr("whats_my_ip")):
+        case transcript.includes(mtr("my_ip")):
             getMyIp();
             break;
         default:

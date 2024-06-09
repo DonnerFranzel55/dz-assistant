@@ -1,0 +1,22 @@
+{
+    "today_is_the": "Today is",
+    "didnt_understand_that": "Sorry! I didn't understand that.",
+    "the_current_time_is": "The current time is",
+    "weather_in": "The weather in %s is %s with a temperatur of %s°Celcius",
+    "what_time_is_it": "what time is it",
+    "weather_location_error": "I couldn't find the weather for %s.",
+    "service_unavailable": "The service is not available right now.",
+    "how_can_i_assist_you_today": "Hello! How can I assist you today?",
+    "tell_a_joke": "make a joke",
+    "tell_a_programmer_joke": "make a programmer joke",
+    "tell_a_misc_joke": "make a miscellaneous joke",
+    "tell_a_pun_joke": "make a pun joke",
+    "tell_a_dark_joke": "make a dark joke",
+    "tell_a_spooky_joke": "make a spooky joke",
+    "tell_a_xmas_joke": "make a Christmas joke",
+    "give_me_an_advice": "give me an advice",
+    "whats_my_ip": "what is my ip",
+    "my_ip": "my IP",
+    "ip_response": "Your IP-Adress is %s",
+    "invalidIpAdress": "Invalid IP-Adress"
+}

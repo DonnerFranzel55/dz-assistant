@@ -1,0 +1,18 @@
+{
+    "what_time_is_it": "wie spät ist es",
+    "weather_location_error": "Ich konnte das Wetter für %s nicht finden.",
+    "service_unavailable": "Ich konnte den Service nicht erreichen.",
+    "how_can_i_assist_you_today": "Hallo, wie kann ich dir helfen.",
+    "tell_a_joke": "mach einen Witz",
+    "tell_a_programmer_joke": "mach einen Programmierer Witz",
+    "tell_a_misc_joke": "mach einen ungewönlichen Witz",
+    "tell_a_pun_joke": "einen Wortspiel Witz",
+    "tell_a_dark_joke": "erzähl einen dunklen Witz",
+    "tell_a_spooky_joke": "erzähl einen gruseligen Witz",
+    "tell_a_xmas_joke": "erzähl einen Weihnachtswitz",
+    "give_me_an_advice": "Gib mir einen Rat",
+    "whats_my_ip": "was ist meine IP",
+    "my_ip": "meine IP",
+    "ip_response": "Deine IP-Adresse ist %s",
+    "invalidIpAdress": "Ungültige IP-Adresse"
+}
