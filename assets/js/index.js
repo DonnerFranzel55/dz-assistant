@@ -35,7 +35,7 @@ recognition.addEventListener('result', (event) => {
 
     switch (true) {
         case transcript.includes(tr("hello").toLowerCase()):
-            speak('Hello! How can I assist you today?');
+            speak(tr("how_can_i_assist_you_today"));
             setTimeout(() => {
                 recognition.start();
                 startButton.innerHTML = '<md-icon filled>graphic_eq</md-icon>';

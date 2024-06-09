@@ -24,5 +24,6 @@
     "weather_in": "Das Wetter in %s ist %s bei %s°Celsius",
     "what_time_is_it": "wie spät ist es",
     "weather_location_error": "Ich konnte das Wetter für %s nicht finden.",
-    "service_unavailable": "Ich konnte den Service nicht erreichen."
+    "service_unavailable": "Ich konnte den Service nicht erreichen.",
+    "how_can_i_assist_you_today": "Hallo, wie kann ich dir helfen."
 }
