@@ -4,7 +4,7 @@ function getSetting(setting) {
 
 function setSetting(key, value) {
     localStorage.setItem(key, value);
-    createTopBar("Saved!");
+    createTopBar(tr("saved") || "Saved!");
 }
 
 function loadSettings() {
