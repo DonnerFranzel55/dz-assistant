@@ -1,7 +1,10 @@
+const build = "DZAP.20240609.002.003"
+const version = "0.0.2"
 let defaultLang = getSetting("lang") || setSetting("lang", "en");
 let defaultCountry = getSetting("country") || setSetting("country", "US");
 let rate = 1;
 let pitch = 1;
+
 
 
 const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition);
@@ -10,6 +13,8 @@ recognition.lang = defaultLang + "-" + defaultCountry;
 
 const startButton = document.getElementById('start-btn');
 const messageContainer = document.getElementById("messageHistory");
+document.getElementById("buildNumber").textContent=build
+document.getElementById("versionNumber").textContent=version
 
 // Start recognition when the button is clicked
 startButton.addEventListener('click', () => {
